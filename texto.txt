@@ -1,0 +1,1193 @@
+
+---------------------------------------------------------------------------------------------lista de  Core Fundamentals a elegir :
+ 
+### **Basics - `/configs`, `/set` Guide**
+
+#### 📌 **The "server" argument**
+- Many commands require a **server number** (`server`).
+- If you have only **one** game server, use `1`.
+- Otherwise, input the corresponding number of your target server.
+
+#### 🛠 **Understanding "Configs"**
+- **Configs** are panels that allow you to **view settings** quickly.
+- Useful for checking settings or finding **config names**.
+- Access config panels with:
+  - `/configs` → **Main Overview**
+  - `/kitconfigs` → **Kit Settings**
+  - `/alertconfigs` → **Alert Settings**
+  - `/crateconfigs` → **Crate Settings**
+  - `/killconfigs` → **Kill Settings**
+  - `/zorpconfigs` → **ZORP Settings**  
+
+📷 *(basic1 image here)*
+
+---
+
+### 🔧 **Modifying Configs with `/set`**
+- To **change a config setting**, use `/set`:
+  - `config_name` = Name inside brackets (e.g., `[NoteMessaging]`).
+  - `option` = `on` or `off` (enable/disable the feature).
+  - `server` = The game server number (e.g., `1`).
+
+📷 *(basic2 image here)*
+
+Example command:
+```
+/set config_name:[NoteMessaging] option:on server:1
+```
+
+---
+
+### ⚡ **Why Configs Matter**
+- Configs are **essential** for setting up KAOSBOT.
+- They let you **quickly check** feature states.
+- Combined with `/set`, you can:
+  - Enable/disable features (`on` or `off`).
+  - Adjust settings (e.g., **ORP time limits**).
+- **Remember the `server` argument!**  
+  - This identifies which server the command applies to.
+
+---
+
+### **💡 Interactive Buttons**
+To make this guide interactive in Discord, we can add buttons:
+- 🔍 **View Configs** → `/configs`
+- ⚙️ **Modify Config** → `/set`
+
+
+
+
+
+## **KAOSBOT Permission Levels & Commands**  
+
+### 🛡 **Access Roles**  
+- 🔴 **KAOSADMIN** → Full access  
+- 🟡 **KAOSMOD** → Limited access  
+- 🟢 **USER** → Basic commands  
+
+👀 **Click the buttons below to see available commands per role.**  
+
+---
+
+### **💻 KAOSADMIN Commands**
+(*Full administrative control over the bot and server settings.*)  
+
+- **[A]** `/addpoints-player`, `/addpoints-server`, `/addmsgs`, `/admin-shop-add-product`, `/allowlink`, `/adminlink`, `/alertconfigs`  
+- **[B]** `/banboom`  
+- **[C]** `/configs`, `/chanset`, `!console`, `/crateconfigs`, `!channelid`, `/admin-shop-create-shop`, `!clearspend`  
+- **[D]** `/delmsgs`, `/admin-shop-delete-shop`, `/delayshop`, `/del-raidlink`  
+- **[F]** `!forcenick`  
+- **[G]** `/get`  
+- **[I]** `!ignore-channel`  
+- **[K]** `/killconfigs`, `/kitconfigs`, `/killpoints`, `!kills`  
+- **[L]** `!listen-channel`, `/listaccessroles`, `/list-raidlink`, `/list-raidalert`  
+- **[M]** `!maxspend`, `/maxbet`  
+- **[O]** `!owner`, `/openshop`  
+- **[R]** `/remove`, `/reconnect`, `/roletolink`, `/refresh`, `/resetpointsall`, `/removeitem`, `/removekit`, `/removeaccessroles`  
+- **[S]** `/set`, `!say`, `!sayall`, `/setcurrencyname`, `/setpos`, `/showmsgs`, `/setaccessroles`, `/subpoints-player`, `/subpoints-server`, `/setleaderboard`  
+- **[T]** `/timedrestart`  
+- **[U]** `/unlink`, `/unbanboom`  
+- **[W]** `/wipeclaims`, `!wipekills`, `/wipezorp`, `/wipepurchases`, `/wipe-raidlink`, `!whogot`  
+- **[Z]** `/zorpconfigs`, `/zoneinfo`  
+
+---
+
+### **🛠 KAOSMOD Commands**  
+(*Moderators with limited access to essential functions.*)  
+
+- **[A]** `/addvip`, `/add`, `/addcrate`  
+- **[C]** `/clearcrate`  
+- **[D]** `/delzorp`, `/diag`  
+- **[F]** `/fps`  
+- **[G]** `/givekit`, `/grantkits`, `/getplayerinfo`  
+- **[R]** `/remove`, `/removecrate`  
+- **[S]** `/sendcrate`  
+
+---
+
+### **👤 USER Commands**  
+(*Basic commands available to all users.*)  
+
+- **[B]** `/blackjack`, `/balance`  
+- **[C]** `/coinflip`  
+- **[D]** `/daily`  
+- **[L]** `/link`  
+- **[S]** `/shop`, `/spin`, `/stats`  
+- **[T]** `/transfer`, `!topkillers`, `/topbalances`  
+
+---
+
+
+
+## **🔗 LINKING / REGISTERING**  
+🔹 **Why Link?**  
+- Players should link their in-game name to their Discord account for better integration.  
+- Linked players get the **"kaoslinked"** role automatically.  
+
+🔹 **How to Link?**  
+- Use the command:  
+  ```/link ingame_username```  
+- Example:  
+  ```/link RustPlayer123```  
+
+🔹 **Admin Commands**  
+- `/allowlink` → Allows a player to re-link to a new name.  
+- `/unlink` → Admin-only command to force unlink a player (only if absolutely necessary).  
+
+---
+
+
+
+## **🕒 MESSAGE SCHEDULER**  
+
+🔹 **What is the Message Scheduler?**  
+- The scheduler allows the server owner to automate messages at set intervals.  
+- Useful for announcements, reminders, and auto-notifications.  
+
+🔹 **Scheduler Commands**  
+✅ **View/Add/Remove Messages**  
+- `/admin-scheduler` → Opens the scheduler panel to manage messages.  
+
+✅ **Set Message Frequency**  
+- `/set scheduler-time 5` → Sets message frequency to every **5 minutes** (adjust as needed).  
+
+✅ **Enable/Disable Scheduler**  
+- `/set scheduler true` → **Enables** scheduled messages.  
+- `/set scheduler false` → **Disables** scheduled messages.  
+
+---
+
+
+
+
+## **🧹 WIPE DAY GUIDE**  
+
+🔹 **Why is Wipe Day Important?**  
+- Ensures a **fair and balanced** restart for all players.  
+- Clears old data so players have fresh access to kits, economy, and stats.  
+
+🔹 **Essential Wipe Day Commands**  
+
+✅ **Reset Kits**  
+- `/wipeclaims` → **Resets all claimed kits.**  
+
+✅ **Reset Player Bucks**  
+- `/resetpointsall` → **Resets all player points/currency.**  
+
+✅ **Wipe Kill Stats**  
+- `!wipekills 1` → **Clears kill statistics for server 1.**  
+
+✅ **Temporarily Close Shops**  
+- `!delayshop 1` → **Closes the shop for 24 hours.**  
+
+✅ **Reset Spend Limits**  
+- `!clearspend` → **Removes all spending limits.**  
+
+✅ **Clear Pending Purchases**  
+- `/wipepurchases` → **Resets any pending transactions.**  
+
+---
+
+------------------------------------------------------------------------------------------------------------------------------------------------ fin de boton lista principal Core Fundamentals:
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------ lista de boton Changing Rust Server 
+
+
+## **🔄 Changing Rust Server (New Method)**
+  
+🔹 **The new command for managing server shards:**  
+- Instead of using `/reconnect`, now use:  
+  **`/admin-shards`**  
+
+🔹 **What does `/admin-shards` do?**  
+- Allows admins to **view, start/restart, or reconnect ** for better server management.  
+
+🔹 **Why was this changed?**  
+- The new method provides **more flexibility** and better **control** over server transitions.  
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin lista de boton changing rust serverr
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------lista de Channel Setup:
+
+## **📢 Setting Up Feed & Player Count Channels**  
+
+🔹 **Message Feed Channels**  
+- These channels log **kills, player joins, item spawns, and more**.  
+- To set up a feed channel, use:  
+  ```  
+  /chanset chantype your-chosen-channel server  
+  ```  
+
+🔹 **Player Count Channel**  
+- Displays the **current number of players** on your server.  
+- The channel name will update automatically.  
+- To set up a player count channel, use:  
+  ```  
+  /chanset chantype your-chosen-channel server  
+  ```  
+- Example of a player count display: **▹🌐18🕑0** (18 players online).  
+
+---
+
+
+
+
+### Prevent Bot from Listening to Commands in a Channel
+
+- **`!ignore-channel`** – Use this command to make the bot stop listening for commands in the current channel.
+- **`!listen-channel`** – Use this command to undo the ignore and allow the bot to listen to commands again.
+
+---
+
+Would you like this explanation to be incorporated into the bot's code or need help with anything else?
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------fin de lista de Channel Setup:
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------lista de Kit System:
+
+
+
+### **📦 Kit Configuration Guide**  
+
+#### **👀 Viewing Kit Configurations**  
+- **Command**: `/kitconfigs server`  
+  This command brings up the kit configurations for your server.  
+  ![Kit Config Panel](kitsystem1)  
+  In the panel, you can view:  
+  - **Kit name** 🏷️  
+  - **Toggle state** (on/off) 🔄  
+  - **Claim time** ⏳ between consecutive claims  
+  - **Display names** 🖋️ for each kit  
+
+#### **📝 Kit Name and Toggle Panel**  
+- **Kit Name**: The name in brackets [toggles] is the name of your kit.  
+  - Ensure it matches the name used on your server.  
+  - Haven’t created your kit yet? Check out this [guide](https://rust-console-edition.gitbook.io/rust-console-edition-community-servers/feature-guides/kit-management).  
+  - There are also **kit examples** 📑 in the `<#1196938471118491678>` channel.  
+- **Customizing Kits**:  
+  - Use the `/set` command to:
+    - Set **claim intervals** (in hours) ⏰  
+    - Customize **display names** ✍️  
+    - Turn each kit **on/off** 🚫
+
+  Example of changing the **elitekit14** claim interval:  
+  ![Kit Interval Example](kitsystem2)
+
+---
+
+#### **💎 Elite Kits and Player Management**  
+
+1. **Elite Kits**:  
+   - These kits are exclusive to players on the **elitelist** 🔑.  
+   - Use `/add` ➕ to add players and `/remove` ➖ to remove players from the list.  
+   Example: Adding **SpongeBobSquarePants** 🧽 to **elitelist5** so they can claim **elitekit5**:  
+   ![Add Player Example](kitsystem3)  
+
+2. **View Elitelist**:  
+   - You can check the players on any elitelist with the `/get` command.  
+   Example usage:  
+   ![View Elitelist Example](kitsystem4)  
+   - After using the `/get` command, you’ll see players listed:  
+   ![Elitelist View](kitsystem5)
+
+---
+
+#### **👥 Elite Kit Roles**  
+
+- You can use **Discord roles** 🎮 to automatically add members to specific elitelists:
+  - **`elitekit1-1`**: Adds a member to **elitelist1** on **server1**
+  - **`elitekit2-3`**: Adds a member to **elitelist2** on **server3**
+  - **`elitekitall-all`**: Adds a member to all elitelists on all servers
+- **Role Options**:  
+  - `elitekit 1~22(all)`, `1~20(all)`, and more.
+
+#### **⚠️ Important Notes**:  
+- Players must be **linked** 🔗 with `/link` for roles to work.  
+- Removing the role removes the player from the elite kit.  
+- You create the roles following the naming conventions above.
+
+---
+
+#### **🔧 Auto Kits**  
+
+1. **🎉 Free Kits**:  
+   - Can be claimed by **any player** (no `/link` required).  
+   - Example Kits:  
+     - `freekit`, `freekit2`  
+
+2. **👑 VIP Kits**:  
+   - Can be claimed by **VIP players** (no `/link` required).  
+   - Example Kit:  
+     - `vipkit`  
+
+3. **💎 Elite Kits**:  
+   - Only claimable by players on the corresponding **elitelist**.  
+   - Example Kits:  
+     - `elitekit1`, `elitekit2`, etc. (up to `elitekit22`)  
+
+4. **Claiming Elite Kits**:  
+   - Elite kits require players to use specific actions (e.g., "I'm outta ammo" 🔫) before claiming them.  
+   Example:  
+   ![Elite Kit Claim](kitsystem6)
+
+---
+
+### **📋 Summary**  
+- Use the `/kitconfigs` command to manage and view kit settings.  
+- Add/remove players from **elitists** using the `/add` and `/remove` commands.  
+- **Roles** linked to elite kits allow automatic access based on the **Discord role**.  
+- Auto kits are available for **Free** and **VIP** players, with **elite kits** reserved for elitists.
+
+---
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------fin lista de Kit System:
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------lista de Offline Raid Protection Systems:
+
+
+### **🛡️ SRP (Scheduled Raid Protection) Commands**
+
+- **`/set srp on/off 1`**  
+  This command enables or disables **SRP** for your server.
+
+- **`/set srp-time 00:01~17:00 1`**  
+  Use this to set the protection time schedule for **SRP**. The time format is in **UTC** ⏰, so remember to convert it accordingly!
+
+- **`/configs 1`**  
+  This command shows all SRP settings in the configuration panel.
+
+---
+
+### **⚠️ PLEASE BE AWARE!**  
+- If you turn **SRP** off while it is currently protecting your server, you will need to manually revert your server settings.  
+  Use this command:  
+  **`!console server.allowpvbdamage 1`**  
+  This will re-enable damage for your server after SRP is turned off.
+
+---
+Here's a streamlined, emoji-enhanced version of your **Z.O.R.P** guide:
+
+---
+
+### **🛡️ What is Z.O.R.P?**
+- **Zoned Offline Raid Protection** (Z.O.R.P)  
+  Protects player bases while they are offline.  
+  - **Automatic** once set up 🔧
+  - **Z.O.R.P** creates a **zone of protection** around the base 🏰
+
+---
+
+### **ℹ️ Things to Know!**
+- **Z.O.R.P Zones** expire every **24 hours** ⏳, but players can reset the timer by running **CIBAH&YES** before logging off 🔄.
+- Adjust the time for **protection** using:  
+  **`/set zorptime`** 🕑
+- Zones cannot overlap with other teams' Z.O.R.P zones 🚫
+- If a player’s team changes, their Z.O.R.P zone will be **removed** 🔄
+
+---
+
+### **👀 How to View Z.O.R.P Configs**
+- **Command**: `/zorpconfigs`  
+  This shows the current Z.O.R.P settings ⚙️
+
+---
+
+### **⚙️ How Admins Activate Z.O.R.P**
+- **Command**: `/set zorp on`  
+  This activates **Z.O.R.P** for your server 🔓
+
+---
+
+### **🚫 Banning from Z.O.R.P**
+- Add to ban list: **`/add zorpbanlist`**  
+- Remove from ban list: **`/remove zorpbanlist`**  
+- Check who's banned: **`/get zorpbanlist`** 🔍
+
+---
+
+### **📝 Whitelisting or Selling Z.O.R.P**
+1. **Allow Whitelist**:  
+   **`/set zorpallowlist on`**  
+2. **Add player to allowlist**:  
+   **`/add zorpallowlist`**  
+3. **Remove player from allowlist**:  
+   **`/remove zorpallowlist`**  
+4. **Check who is allowed**:  
+   **`/get zorpallowlist`** 👥
+
+---
+
+### **🧹 Wiping All Z.O.R.P Zones**
+- **Command**: `/wipezorp`  
+  Removes **all Z.O.R.P zones** from the server ❌
+
+---
+
+### **❌ Deleting a Singular Zone**
+- **Command**: `/delzorp`  
+  Removes **one specific Z.O.R.P zone** ⚔️
+
+---
+
+### **👤 How Does a Player Use Z.O.R.P?**
+1. **Player must** be in a team 👥
+2. **Player must** be the **team leader** 👑
+3. Use **"Can I build around here?"**  
+4. Confirm with **"Yes"** ✅  
+5. If the player already has a zone, they should **use CIBAH & Yes** daily before logging off 🔄
+
+---
+
+### **⏳ Adjusting Zone Expiry Time**
+- **Command**: `/set zorpExpiryTime`  
+  Adjust zone expiry between **24~72 hours** ⏰
+
+---
+
+### **🔄 Preventing Zone Expiry**
+1. Team leader should use **"Can I build around here?"**
+2. Then use **"Yes"** ✅  
+- Bot will respond: **"ORP REFRESHED"** 🆗
+
+---
+
+### **❌ Deleting an Existing Z.O.R.P Zone**
+- Use **"Can I build around here?"**, then **"Goodbye"** 👋
+
+---
+
+### **📝 Z.O.R.P Logs**
+- **Z.O.R.P** logs the following actions:  
+  - Zone creation 📅  
+  - Zone deletion 🗑️  
+  - Zone expiration (and deletion) ⏳  
+  - Collision detection that deletes a zone 🚧  
+  - Invalid zone detection by **SYNC** 🚨
+
+---
+
+### **🎨 Zone Colours**
+- **White**: New zone (will turn green soon) 🌫️
+- **Green**: Team is **online** 💚
+- **Yellow**: Team is **offline**, but not long enough (based on **zorptime**) 🟡
+- **Red**: Team is **offline** (protected) 🔴
+
+---
+
+### **🔑 Adding to Z.O.R.P Allowlist via Roles**
+- **Command**:  
+  **`zorp-1`** for **server1**  
+  (Change 1 to any server number) 🖥️
+
+---
+
+---------------------------------------------------------------------------------------------------------------------------------------------------fin lista de Offline Raid Protection Systems:
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------lista de Teleportation System:
+
+
+
+---
+
+### **🛠️ Useful Commands:**
+- **`/tpconfigs`**: View teleport configurations  
+- **`/admin-positions`**: View, set, add, or remove teleport positions  
+- **`/get-list` & `/add-to-list`**: View or add players to teleport lists  
+- **`/remove-from-list`**: Remove players from teleport lists  
+- **`/set`**: Set teleport configs (e.g., enable/disable teleportation)
+
+---
+
+### **💡 Useful Optional Features:**
+- **Combat Lock**:  
+  Block teleporting after a player dies or kills someone:  
+  **`/set combatlock_use on #`**  
+  - This will block teleportation for `{combatlock_time}` seconds after a kill or death 💥
+  - **Set combat lock time**:  
+    **`/set combatlock_time 60 #`** ⏳ (Time in seconds)
+
+---
+
+### **🔄 General Teleports:**
+- There are **8 main teleport options**:  
+  - **Quick Chat Directions**:  
+    - N, NE, E, SE, S, SW, W, NW 🌍
+  - **Config Names**:  
+    - TPN, TPNE, TPE, TPSE, TPS, TPSW, TPW, TPNW 🔑
+
+---
+
+### **🛠️ Customizing Teleports:**
+
+#### **General Settings**  
+- **Turn on/off teleport**:  
+  **`/set TPN_use on/off #`**  
+- **Display name** for the teleport:  
+  **`/set TPN_name "North Teleport" #`**  
+- **Set time** between teleports (hours):  
+  **`/set TPN_time 0.0168 #`** (0.0168 hours = 1 minute) ⏳  
+- **Use list to allow teleport**:  
+  **`/set TPN_uselist on/off #`** ✅
+
+#### **Delays:**
+- **Add delay** between teleport request and teleport action?  
+  **`/set TPN_usedelay on/off #`**  
+- **Set delay time** (seconds):  
+  **`/set TPN_delaytime 15 #`** ⏱️ (Time before teleportation occurs after request)
+
+#### **Teleport Kits:**
+- **Provide a kit** upon teleportation:  
+  **`/set TPN_usekit on/off #`** 🎁  
+- **Kit name** to give if teleporting:  
+  **`/set TPN_kitname "northkit" #`** 🎒
+
+#### **Others:**
+- **Kill before teleport?** Useful when providing a kit:  
+  **`/set TPN_kill on/off #`** ☠️
+
+---
+
+### **🗺️ Adding/Removing Teleport Positions:**
+- **Command**: `/admin-positions`  
+  View and modify current teleport positions:  
+  - **Outpost**, **Event**, **Prison** can only have **one** position.  
+  - For others, you can set **multiple** positions; a random one is picked for players. 🎯
+
+---
+
+### **⚙️ Legacy Teleports:**
+- **OutpostTP** & **EventTP**  
+  These are legacy teleports with **fewer options and controls** ⚙️
+
+---
+
+### **🔧 TPN Configuration Example:**
+- **TPN_use**: 🟢 **true** – Teleport is active  
+- **TPN_name**: ⚪ **North Teleport** – Display name  
+- **TPN_time**: ⚪ **0.0168** – Time in hours between two teleports (1 minute)  
+- **TPN_uselist**: 🟢 **true** – Only players on the list can teleport  
+- **TPN_usekit**: 🔴 **false** – No kit provided during teleport  
+- **TPN_kitname**: ⚪ **"TPN KIT"** – Kit name (if `TPN_usekit` is true)  
+- **TPN_kill**: 🔴 **false** – No kill before teleport  
+- **TPN_usedelay**: 🔴 **false** – No delay between request and teleport  
+- **TPN_delaytime**: ⚪ **15** seconds – Time before teleport happens
+
+---
+
+### **🗺️ Current TPN Positions:**
+- **Current 'TPN' Positions**:  
+  **45, 45, 45**  
+  - You can remove positions using the `/admin-positions` command.
+
+---
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------fin lista de Teleportation System:
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Auto-Event System:
+
+
+---
+
+### **🎉 Auto Event System:**
+- You can run **up to 3 auto event systems** at once!  
+- **View event settings**:  
+  **`/eventconfigs`**  
+- **Set event settings**:  
+  **`/set`** (e.g., **`/set event-msg1`** to set event message 1, or **`event-msg2`** for message 2, and so on).
+
+---
+
+### **🛠️ Useful Commands for Events:**
+- **View crate and airdrop positions**:  
+  **`/admin-positions`**  
+- **Add or remove crates/airdrops**:  
+  **`/admin-positions`**  
+- **Manually trigger events**:  
+  **`/trigger-event`**  
+- **Clear crate/airdrop lists**:  
+  **`/clear-an-event`**  
+
+---
+
+### **⚠️ Important Notes to Keep in Mind:**
+- **Placeholder positions**:  
+  By default, crates and airdrops have placeholder positions like **"1, 1, 1"** and **"2, 2, 2"**.  
+  - **Remember to remove them!** 🧹  
+- **Airdrop coordinates**:  
+  When adding airdrop positions, ensure that the **Y-coordinate** is **high enough** for the airdrop to fall properly from the sky 🌧️.
+
+---
+
+### **🧳 Crates Stuck Under the Map?**
+If your crates are stuck due to incorrect positions, use the following command to delete all locked crates on the map:
+
+- **Clear locked crates**:  
+  **`!console entity.deleteentity hackablecrate 0`** 🧨
+
+---
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin lista de Auto-Event System:
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Economy System:
+
+
+---
+
+### **🛍️ General Shop Commands:**
+- **Open the shop**:  
+  **`/shop`**  
+
+---
+
+### **🛠️ Creating/Deleting Shops:**
+- **Create a shop on the selected server**:  
+  **`/admin-shop-create-shop`**  
+- **Delete a shop from the selected server**:  
+  **`/admin-shop-delete-shop`**  
+
+---
+
+### **📂 Managing Categories:**
+- **Create a "main" category**:  
+  **`/admin-shop-add-category`**  
+- **Create a "sub" category within a main category**:  
+  **`/admin-shop-add-subcategory`**  
+
+---
+
+### **🛒 Adding Products to a Shop:**
+- **Add an item to the shop**:  
+  **`/admin-shop-add-item`**  
+  - Note: **Items cannot be added to "kit" categories.**
+- **Add a kit to the shop**:  
+  **`/admin-shop-add-kit`**  
+  - Note: **Kits cannot be added to "item" categories.**
+
+---
+
+### **✏️ Editing Products in the Shop:**
+- **Edit an existing product**:  
+  **`/admin-shop-edit-product`**  
+- **Remove a product from the shop**:  
+  **`/admin-shop-remove-product`**  
+
+---
+
+### **🔒 Other Shop Commands:**
+- **Temporarily close the shop**:  
+  **`/delayshop`**  
+  - The shop will automatically reopen after the set time.  
+- **Open the shop early** (if previously closed with `/delayshop`):  
+  **`/openshop`**  
+- **Set a maximum daily spend**:  
+  **`!maxspend`**  
+- **Set universal shop** (always list items from Shop 1 on all servers):  
+  **`/set shop-universal`**  
+
+---
+
+### **🔑 Preventing Access to Categories with Roles:**
+- When creating a category, you can restrict access by providing roles in the command.  
+  - Only players with the specified role(s) can view/access that category.  
+  - This applies to both main and sub-categories.  
+
+---
+
+### **⏰ Timer Restrictions on Products:**
+- When adding products, you can set a timer that limits purchases:  
+  - **One-time purchase per set time**  
+  - Prevents adjusting quantities for the user during this time.
+
+
+---
+
+### **💰 Currency Information:**
+
+- **Earning Currency:**
+  - Players earn currency for in-game kills:
+    - 1 point for killing a scientist.
+    - 30 points for killing another player.
+    - These values can be adjusted.
+  - **Anti-Farm Rule**: Players can only earn currency from the same player once every 30 minutes.
+
+- **Linking Accounts:**
+  - Players **must link** their Discord account to their in-game name with the command:  
+    **`/link ingamename`**
+  - Currency is not earned until the account is linked.
+
+- **Kaos Admin Commands:**
+  - **Unlink a player**:  
+    **`/unlink @mention`**  
+  - **Allow a player to relink**:  
+    **`/allowlink @mention`**
+
+---
+
+### **💳 Currency (User Commands):**
+
+- **Link Discord to In-Game Name**:  
+  **`/link ingameusername`**
+- **Check Your Balance**:  
+  **`/balance`**
+- **Claim Daily Reward**:  
+  **`/daily`**  
+  - Gives a random reward between a min-max range (default: 30-300 points).  
+  - Use **`/setdailyscale`** to change the default values.
+- **Transfer Currency to Another Player**:  
+  **`/transfer`**
+- **Swap Currency Between Servers**:  
+  **`/swap`**
+
+---
+
+### **⚙️ Currency (Admin Commands):**
+
+- **Rename the Currency**:  
+  **`/setcurrencyname currencyname`**  
+  - Example: Rename currency to "bucks".
+- **Check Linked User Information**:
+  - **Who is linked to a Discord account**:  
+    **`!whois @mention`**
+  - **Who is linked to a specific in-game name**:  
+    **`!whogot ingamename`**
+- **Unlink or Allow Relinking**:
+  - **Unlink a user**:  
+    **`/unlink @mention`**
+  - **Allow a user to link again**:  
+    **`/allowlink @mention`**
+- **Set Points for Kills**:
+  - **Set points for killing a player**:  
+    **`/killpoints`**
+  - **Set points for killing a scientist**:  
+    **`/killpoints`**
+- **Add or Remove Points**:
+  - **Add points to a specific player**:  
+    **`/addpoints-player`**
+  - **Remove points from a specific player**:  
+    **`/subpoints-player`**
+  - **Add points to all players**:  
+    **`/addpoints-server`**
+  - **Remove points from all players**:  
+    **`/subpoints-server`**
+
+---
+
+### **Important Reminders:**
+- When targeting players in admin commands, always use their **in-game name**, not their Discord name.  
+- Use **`!whois @mention`** to get a player’s in-game name.
+
+---
+
+
+### **💸 `/daily` Command:**
+
+- **Purpose**:  
+  The `/daily` command allows users to claim a **daily currency reward**.
+
+- **Default Behavior**:
+  - By default, the command gives a random reward between **30 and 300 points** (min-max values).
+  
+- **Customizing the Reward**:
+  - Use the `/setdailyscale` command to set custom **min** and **max** values for the daily reward.  
+    **Example**:  
+    **`/setdailyscale 300 1000`**  
+    - In this case, users will receive a reward between **300 and 1000 points**.
+
+- **Preventing Access to `/daily`**:
+  - To **disable** the `/daily` command, you can:
+    - Use **Discord Interaction Control** to block its use.
+    - Or, lock the command behind a specific role using:  
+      **`/setaccessroles`**  
+      - For example, you could require the **kaosadmin** role for access.
+
+- **Important Notes**:
+  - If **`/setdailyscale`** is not configured, the command will default to **30-300 points**.
+
+---
+
+
+### **🎰 Gambling Commands:**
+
+- **`/spin`**:  
+  Play the **bandit wheel** for a chance to win a random prize!
+
+- **`/coinflip`**:  
+  Flip a coin and bet on heads or tails. The winner takes all!
+
+- **`/blackjack`**:  
+  Play a round of **Blackjack** and try to beat the dealer!
+
+---
+
+### **💰 Check Your Balance:**
+
+- **`/balance`**:  
+  Displays your current **currency balance**.
+
+---
+
+### **Admin Gambling Commands:**
+
+- **`/maxbet`**:  
+  Set the **maximum bet** allowed for a single round of gambling.
+
+---
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin lista de Economy System:
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Kill System
+
+
+
+### **🔧 Kill Message Configurations:**
+
+#### **Viewing the Kill Configs:**
+- **`/killconfigs`**  
+  View the current **kill message settings**.
+
+---
+
+#### **Setting Colors:**
+You can set specific colors for different parts of the kill message.
+
+- **`/set killercolor #123123 server#`**  
+  Change the color of the **killer**'s name.
+
+- **`/set phrasecolor #123123 server#`**  
+  Change the color of the **kill phrase**.
+
+- **`/set victimcolor #123123 server#`**  
+  Change the color of the **victim**'s name.
+
+#### **Alternative Method (Predefined Colors):**
+Instead of using hex codes, you can use basic colors like:
+
+- **`/set killercolor red server#`**  
+- **`/set phrasecolor green server#`**  
+- **`/set victimcolor blue server#`**  
+
+---
+
+#### **Other Settings:**
+- **`/set killphrase word server#`**  
+  Set a custom word/phrase for the kill message.
+
+- **`/set killphraserandomizer true/false server#`**  
+  Enable or disable randomization of the kill phrase.
+
+---
+
+#### **Important Note:**
+- The **RandomKillPhrase** list **cannot** be edited at the moment, but it may be available for future updates.
+
+---
+
+
+### **🔪 Bounty System Setup**
+
+#### **Bounty Configs:**
+- **`/bountyconfigs`**  
+  View and manage the bounty system settings.
+
+---
+
+#### **Changing the Settings:**
+Use the `/set` command to modify specific bounty-related features:
+
+---
+
+### **🛠️ Key Settings:**
+
+- **`BountySystem`**  
+  **(Toggle)**  
+  Enables or disables the bounty system entirely.
+
+- **`BountyReward`**  
+  **(Points/Currency)**  
+  Set the base amount of currency/points to reward the player who kills a bounty target.
+
+- **`BountyScale`**  
+  **(Reward Ramp)**  
+  A decimal percentage increase per additional kill on a bounty target.  
+  For example:  
+  - If **`BountyReward`** is 30 and **`BountyScale`** is 0.1 (10%), the reward increases based on the target’s kill count.
+  - If the target had 5 kills: **(30 + 3 + 3 + 3 + 3 + 3)** = **45 points** awarded to the killer.
+
+- **`BountyDuration`**  
+  **(Minutes)**  
+  - Time period in which kills count towards increasing the bounty.
+  - The bounty will scale down as time goes on, with kills expiring after the set duration.
+
+- **`BountyMaxTargets`**  
+  **(Targets)**  
+  - Defines how many bounty targets can be active at once.
+
+- **`BountyMinKills`**  
+  **(Clamp)**  
+  - Minimum number of kills required before a player becomes eligible as a bounty target.
+
+- **`BountyUnique`**  
+  **(Anti-Abuse)**  
+  - Ensures that only **unique kills** count, preventing the same player from repeatedly earning bounty rewards for killing the same target.
+
+---
+
+### **⚠️ Important Notes:**
+- Bounties do not last indefinitely; they will **eventually reset** and start fresh.
+
+---
+
+If you'd like to customize this system more or need further assistance, just let me know!
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin de lista de Kill System
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Clan System
+
+
+/clan (all straightforward really)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin de lista de Clan System
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Vehicle Spawning (Dial-A-Ride)
+
+---
+
+### **Rider System Commands**:
+
+- **/riderconfigs**  
+  - View all available toggles/settings.
+
+- **/set**  
+  - Use this command to change any of the **Rider System** settings.
+
+---
+
+### **Instructions**:
+- Use **"Let's go!"** to begin.
+  - Respond with:
+    - **Yes** = Claim a **Horse** 🐴
+    - **Goodbye** = Claim a **Rhib** 🚤
+
+---
+
+### **Role Names**:
+- Set roles like `rider-1`, `rider-2`, `rider-all`, etc., for different permissions or configurations.
+
+---
+--------------------------------------------------------------------------------------------------------------------------------------------------- fin lista de Vehicle Spawning (Dial-A-Ride)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- lista de Others
+
+
+### **Note Messaging Commands**:
+
+- **/configs server1**  
+  - View the **Note Messaging** status for the specified server (`on/off`).
+
+- **/set notemessaging true server1**  
+  - Turns **Note Messaging** on for the server.
+
+- **/set notemessaging false server1**  
+  - Turns **Note Messaging** off for the server.
+
+- **/get noteblocklist server1**  
+  - Displays all player names currently on the **Note Block List**.
+
+- **/add noteblocklist playername server1**  
+  - Adds a player to the **Note Block List**, preventing them from sending note messages.
+
+- **/remove noteblocklist playername server1**  
+  - Removes a player from the **Note Block List**, allowing them to send note messages again.
+
+---
+
+### **Important Note**:
+- Players on the **Note Block List** will **NOT** be able to send note messages.
+
+---
+
+### **Prison System Commands**:
+
+- **Set Prison Location**:  
+  - `/setpos prison` 📍  
+    - Sets the location of the prison (e.g., at the toll booths outside the outpost gates).
+
+- **Turn Prison System On or Off**:  
+  - `/set prisonsystem on` ✅  
+    - Turns the prison system on.  
+  - `/set prisonsystem off` ❌  
+    - Turns the prison system off.
+
+- **Add/Remove Players from Prison**:  
+  - `/add prisonlist playername` ➕  
+    - Adds a player to the prison list, locking them inside.  
+  - `/remove prisonlist playername` ➖  
+    - Removes a player from the prison list, allowing them to leave.
+
+- **View Prison List**:  
+  - `/get prisonlist` 👀  
+    - Displays the list of players currently in the prison.
+
+---
+
+### **Important Note**:  
+- If a player is on the prison list, **if they die, they will be sent straight back to the prison!** ⚰️➡️🔒
+
+---
+
+### **Raid Alerts System Commands**:
+
+- **Turn Raid Alerts On or Off**:  
+  - `/set raidalerts on` ✅  
+    - Activates raid alerts.  
+  - `/set raidalerts off` ❌  
+    - Deactivates raid alerts.
+
+- **Set Your Raid Alerts Channel**:  
+  - `/chanset` 📡  
+    - Set the Discord channel where you want to receive raid alerts.
+
+- **How Do Players Get Their Frequency?**:  
+  - `/raidlink` 🔑  
+    - This command provides a unique frequency for the player’s base.  
+    - If needed, this can regenerate a new frequency in case the old one has been exposed.
+
+- **View All Registered Frequencies**:  
+  - `/list-raidlink` 📋  
+    - View all the currently registered frequencies on the server.
+
+- **Check if Any Bases Are Being Raided**:  
+  - `/list-raidalert` ⚠️  
+    - Displays all bases that are currently being reported as under attack.
+
+- **Wipe All Registered Frequencies**:  
+  - `/wipe-raidlink` 🧹  
+    - Removes all currently registered frequencies from the system.
+
+- **Delete a Specific User's Registered Frequency**:  
+  - `/del-raidlink` 🚫  
+    - Deletes a specific player's frequency from the list.
+
+---
+
+### **Additional Notes**:
+- Players will need to set up their broadcaster to link to the system and get alerts in their designated channel.  
+- Make sure to keep your frequency secure to prevent it from being exposed! 🔒
+
+---
+
+## How to build the raid alerts broadcaster setup:
+https://www.youtube.com/watch?v=mL4vW00Pd24
+
+Here's the breakdown of the **Log Parser Commands** with appropriate symbols and commands:
+
+### **Adding Commands (Log Parser):**
+
+- **ITEM**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[ITEM][ITEM_NAME][QUANTITY]`
+  
+- **KIT**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[KIT][KIT_NAME][QUANTITY]`
+  
+- **POINTS**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[POINTS][QUANTITY]`
+
+---
+
+### **Lists (Log Parser):**
+
+- **ZORPLIST (ADD)**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[ZORPLIST]`
+  
+- **ZORPLIST (REMOVE)**:  
+  `[KAOS][DEL][<@{discord_id}>][SERVER]=[ZORPLIST]`
+  
+- **KITLIST (ADD)**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[KITLIST][KIT_NAME]`
+  
+- **KITLIST (REMOVE)**:  
+  `[KAOS][DEL][<@{discord_id}>][SERVER]=[KITLIST][KIT_NAME]`
+  
+- **RIDERSLIST (ADD)**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[RIDER]`
+  
+- **RIDERSLIST (REMOVE)**:  
+  `[KAOS][DEL][<@{discord_id}>][SERVER]=[RIDER]`
+
+---
+
+### **Wipe Claims (Log Parser):**
+
+- **KITLIST (CLAIMWIPE)**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[CLAIMWIPE][KIT_NAME]`
+
+---
+
+### **VIP Adding and Removing:**
+
+- **VIP ADD**:  
+  `[KAOS][ADD][<@{discord_id}>][SERVER]=[VIP]`
+  
+- **VIP REMOVE**:  
+  `[KAOS][DEL][<@{discord_id}>][SERVER]=[VIP]`
+
+---
+
+### **Supported Arguments:**
+
+- **[SERVER]**  
+  - Specific Server: `[1]`  
+  - All Servers: `[ALL]`  
+  - List of Servers: `[1,2,3,6]`  
+
+- **[KIT_NAME]**  
+  - Example: `[elitekit]`, `[elitekit5]`, etc.  
+  - Arrays also work: `[elitekit, elitekit2, elitekit7]`  
+  - `[ALL]` to cover all kits.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------- finn lista de Others
